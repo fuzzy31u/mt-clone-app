@@ -230,6 +230,7 @@ class Action extends HTMLOutputter // lawsuit
             }
 
             $this->cssLink(common_path('js/css/smoothness/jquery-ui.css', StatusNet::isHTTPS()));
+            $this->cssLink(common_path('theme/my-theme/bootstrap.min.css', StatusNet::isHTTPS()));
 
             if (Event::handle('StartShowUAStyles', array($this))) {
                 $this->comment('[if IE]><link rel="stylesheet" type="text/css" '.
