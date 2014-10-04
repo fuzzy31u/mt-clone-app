@@ -100,6 +100,7 @@
 
 
 
+/** My customize **/
 
 #wrap {
     background-color: #fceedf;
@@ -107,4 +108,8 @@
 
 #content {
     width: 580px;
+}
+
+.form_settings .form_data input.checkbox {
+    width:40px;
 }

@@ -354,10 +354,11 @@ class RegisterAction extends Action
         } else {
             $instr =
               // TRANS: Page notice on registration page.
-              common_markup_to_html(_('With this form you can create '.
-                                      'a new account. ' .
-                                      'You can then post notices and '.
-                                      'link up to friends and colleagues.'));
+	      //              common_markup_to_html(_('With this form you can create '.
+	      //                                      'a new account. ' .
+	      //                                      'You can then post notices and '.
+	      //                                      'link up to friends and colleagues.'));
+              common_markup_to_html(_('ユーザ登録をします'));
 
             $this->elementStart('div', 'instructions');
             $this->raw($instr);
@@ -437,7 +438,8 @@ class RegisterAction extends Action
             // TRANS: Field label on account registration page.
             $this->input('nickname', _('Nickname'), $this->trimmed('nickname'),
                          // TRANS: Field title on account registration page.
-                         _('1-64 lowercase letters or numbers, no punctuation or spaces.'));
+			 //                         _('1-64 lowercase letters or numbers, no punctuation or spaces.'));
+			 _('1～64文字の小文字アルファベットまたは数字。スペースや句読点は除く。'));
             $this->elementEnd('li');
             $this->elementStart('li');
             // TRANS: Field label on account registration page.
@@ -462,8 +464,9 @@ class RegisterAction extends Action
                 // TRANS: Field label on account registration page.
                 $this->input('email', _m('LABEL','Email'), $this->trimmed('email'),
                              // TRANS: Field title on account registration page.
-                             _('Used only for updates, announcements, '.
-                               'and password recovery.'));
+			     //                             _('Used only for updates, announcements, '.
+			     //                               'and password recovery.'));
+                             _('お知らせでのみ使用します'));
             }
             $this->elementEnd('li');
             $this->elementStart('li');
@@ -471,15 +474,17 @@ class RegisterAction extends Action
             $this->input('fullname', _('Full name'),
                          $this->trimmed('fullname'),
                      // TRANS: Field title on account registration page.
-                     _('Longer name, preferably your "real" name.'));
+			 //                     _('Longer name, preferably your "real" name.'));
+                     _(' '));
             $this->elementEnd('li');
             $this->elementStart('li');
             // TRANS: Field label on account registration page.
-            $this->input('homepage', _('Homepage'),
+            $this->input('homepage', _('ブログURLなど'),
                          $this->trimmed('homepage'),
                          // TRANS: Field title on account registration page.
-                         _('URL of your homepage, blog, '.
-                           'or profile on another site.'));
+			 //                         _('URL of your homepage, blog, '.
+			 //                           'or profile on another site.'));
+			 _(' '));
             $this->elementEnd('li');
             $this->elementStart('li');
             $maxBio = Profile::maxBio();
@@ -493,7 +498,8 @@ class RegisterAction extends Action
                                     $maxBio);
             } else {
                 // TRANS: Text area title on account registration page.
-                $bioInstr = _('Describe yourself and your interests.');
+	      //                $bioInstr = _('Describe yourself and your interests.');
+                $bioInstr = _(' ');
             }
             // TRANS: Text area label on account registration page.
             $this->textarea('bio', _('Bio'),
@@ -502,11 +508,12 @@ class RegisterAction extends Action
             $this->elementEnd('li');
             $this->elementStart('li');
             // TRANS: Field label on account registration page.
-            $this->input('location', _('Location'),
+            $this->input('location', _('都道府県'),
                          $this->trimmed('location'),
                          // TRANS: Field title on account registration page.
-                         _('Where you are, like "City, '.
-                           'State (or Region), Country".'));
+			 //                         _('Where you are, like "City, '.
+			 //                           'State (or Region), Country".'));
+                         _(' '));
             $this->elementEnd('li');
             Event::handle('EndRegistrationFormData', array($this));
             $this->elementStart('li', array('id' => 'settings_rememberme'));
