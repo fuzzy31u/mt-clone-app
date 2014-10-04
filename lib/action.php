@@ -504,7 +504,8 @@ class Action extends HTMLOutputter // lawsuit
      */
     function showHeader()
     {
-        $this->elementStart('div', array('id' => 'header'));
+      //        $this->elementStart('div', array('id' => 'header'));
+        $this->elementStart('header', array());
         $this->showLogo();
         $this->showPrimaryNav();
         if (Event::handle('StartShowSiteNotice', array($this))) {
@@ -513,7 +514,8 @@ class Action extends HTMLOutputter // lawsuit
             Event::handle('EndShowSiteNotice', array($this));
         }
 
-        $this->elementEnd('div');
+	//        $this->elementEnd('div');
+        $this->elementEnd('header');
     }
 
     /**
