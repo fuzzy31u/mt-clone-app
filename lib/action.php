@@ -919,7 +919,7 @@ class Action extends HTMLOutputter // lawsuit
             Event::handle('EndShowSections', array($this));
         }
         if (Event::handle('StartShowExportData', array($this))) {
-            $this->showExportData();
+	  //            $this->showExportData();
             Event::handle('EndShowExportData', array($this));
         }
         $this->elementEnd('div');

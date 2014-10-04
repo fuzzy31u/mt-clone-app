@@ -70,9 +70,9 @@ class PublicGroupNav extends Menu
             }
 
             // TRANS: Menu item in search group navigation panel.
-            $this->out->menuItem(common_local_url('groups'), _m('MENU','Groups'),
+	    //            $this->out->menuItem(common_local_url('groups'), _m('MENU','Groups'),
                 // TRANS: Menu item title in search group navigation panel.
-                _('User groups'), $this->actionName == 'groups', 'nav_groups');
+	    //                _('User groups'), $this->actionName == 'groups', 'nav_groups');
 
             if (!common_config('performance', 'high')) {
                 // TRANS: Menu item in search group navigation panel.
