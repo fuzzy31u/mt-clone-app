@@ -479,7 +479,7 @@ class Action extends HTMLOutputter // lawsuit
                             : array('id' => strtolower($this->trimmed('action'))));
         $this->elementStart('div', array('id' => 'wrap'));
         if (Event::handle('StartShowHeader', array($this))) {
-            $this->showHeader();
+	    $this->showHeader();
             $this->flush();
             Event::handle('EndShowHeader', array($this));
         }
@@ -504,8 +504,7 @@ class Action extends HTMLOutputter // lawsuit
      */
     function showHeader()
     {
-      //        $this->elementStart('div', array('id' => 'header'));
-        $this->elementStart('header', array());
+        $this->elementStart('div', array('id' => 'header'));
         $this->showLogo();
         $this->showPrimaryNav();
         if (Event::handle('StartShowSiteNotice', array($this))) {
@@ -514,8 +513,7 @@ class Action extends HTMLOutputter // lawsuit
             Event::handle('EndShowSiteNotice', array($this));
         }
 
-	//        $this->elementEnd('div');
-        $this->elementEnd('header');
+	$this->elementEnd('div');        
     }
 
     /**
@@ -715,7 +713,7 @@ class Action extends HTMLOutputter // lawsuit
      */
     function showCore()
     {
-        $this->elementStart('div', array('id' => 'core', 'class' => 'container'));
+        $this->elementStart('div', array('id' => 'core'));
         $this->elementStart('div', array('id' => 'aside_primary_wrapper'));
         $this->elementStart('div', array('id' => 'content_wrapper'));
         $this->elementStart('div', array('id' => 'site_nav_local_views_wrapper'));
