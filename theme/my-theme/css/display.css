@@ -1,0 +1,110 @@
+/** theme: my-theme
+ *
+ * @package   
+ * @author    Yu Kamiya <fuzzy31u@gmail.com>
+ * @license   http://creativecommons.org/licenses/by/3.0/ Creative Commons Attribution 3.0 Unported
+ * @link      
+ */
+
+/* header elements */
+
+#site_nav_global_primary {
+    top: 10px;
+    -webkit-border-top-right-radius: 6px;
+    -moz-border-radius-topright: 6px;
+    border-top-right-radius: 6px;
+    background: #ff8887;
+    background: -moz-linear-gradient(top, #ff9995 0%, #FF8887 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff9995), color-stop(100%,#FF8887));
+    background: -webkit-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    background: -o-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    background: -ms-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9995', endColorstr='#FF8887',GradientType=0 );
+    background: linear-gradient(top, #ff9995 0%,#FF8887 100%);
+}
+
+#input_form_nav li:hover a, #input_form_nav li.current a {
+    color: #fff;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+    border: 1px solid #ececf2;
+    background: #FF8887;
+    background: -moz-linear-gradient(top, #ff9995 0%, #FF8887 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff9995), color-stop(100%,#FF8887));
+    background: -webkit-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    background: -o-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    background: -ms-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9995', endColorstr='#FF8887',GradientType=0 );
+    background: linear-gradient(top, #ff9995 0%,#FF8887 100%);
+}
+
+#site_nav_local_views a:hover, #site_nav_local_views .current a {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    background: #FF8887;
+    background: -moz-linear-gradient(top, #ff9995 0%, #FF8887 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff9995), color-stop(100%,#FF8887));
+    background: -webkit-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    background: -o-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    background: -ms-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9995', endColorstr='#FF8887',GradientType=0 );
+    background: linear-gradient(top, #ff9995 0%,#FF8887 100%);
+}
+
+#site_nav_object a:hover, #site_nav_object .current a {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    background: #FF8887;
+    background: -moz-linear-gradient(top, #ff9995 0%, #FF8887 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff9995), color-stop(100%,#FF8887));
+    background: -webkit-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    background: -o-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    background: -ms-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9995', endColorstr='#FF8887',GradientType=0 );
+    background: linear-gradient(top, #ff9995 0%,#FF8887 100%);
+}
+
+#bookmarkpopup {
+    min-width: 600px;
+    margin-top: 0px;
+    height: 100%;
+    border: 10px solid #FF8887;
+    background: #FF8887;
+}
+
+#onboard_section H2 {
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-right-radius: 4px;
+    position: relative;
+    top: -11px;
+    left: -11px;
+    padding: 2px 0px 2px 10px;
+    margin-right: -22px;
+    margin-bottom: 5px;
+    color: #fff;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+    background: #FF8887;
+    background: -moz-linear-gradient(top, #ff9995 0%, #FF8887 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff9995), color-stop(100%,#FF8887));
+    background: -webkit-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    background: -o-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    background: -ms-linear-gradient(top, #ff9995 0%,#FF8887 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff9995', endColorstr='#FF8887',GradientType=0 );
+    background: linear-gradient(top, #ff9995 0%,#FF8887 100%);
+}
+
+
+
+
+#wrap {
+    background-color: #fceedf;
+}
+
+#content {
+    width: 580px;
+}
