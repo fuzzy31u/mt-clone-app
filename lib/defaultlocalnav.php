@@ -62,7 +62,7 @@ class DefaultLocalNav extends Menu
 
             $bn = new PublicGroupNav($this->action);
             // TRANS: Menu item in default local navigation panel.
-            $this->submenu(_m('MENU','Public'), $bn);
+            $this->submenu(_m('MENU','新着'), $bn);
 
             if (!empty($user)) {
                 $sn = new GroupsNav($this->action, $user);

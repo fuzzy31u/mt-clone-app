@@ -66,6 +66,7 @@ class InviteButtonSection extends Section
 
     function showContent()
     {
+      /*
         $this->out->element(
             'a',
             array(
@@ -74,6 +75,7 @@ class InviteButtonSection extends Section
             ),
             $this->buttonText
         );
+      */
         return false;
     }
 }

@@ -439,7 +439,7 @@ class RegisterAction extends Action
             $this->input('nickname', _('Nickname'), $this->trimmed('nickname'),
                          // TRANS: Field title on account registration page.
 			 //                         _('1-64 lowercase letters or numbers, no punctuation or spaces.'));
-			 _('1～64文字の小文字アルファベットまたは数字。スペースや句読点は除く。'));
+			 _('※例:yukmama. 1～64文字の小文字アルファベットまたは数字(スペースや句読点は除く).'));
             $this->elementEnd('li');
             $this->elementStart('li');
             // TRANS: Field label on account registration page.
@@ -475,7 +475,7 @@ class RegisterAction extends Action
                          $this->trimmed('fullname'),
                      // TRANS: Field title on account registration page.
 			 //                     _('Longer name, preferably your "real" name.'));
-                     _(' '));
+                     _('※例:ゆきママ'));
             $this->elementEnd('li');
             $this->elementStart('li');
             // TRANS: Field label on account registration page.
@@ -577,9 +577,10 @@ class RegisterAction extends Action
         case 'cc': // fall through
         default:
             // TRANS: Copyright checkbox label in registration dialog, for Creative Commons-style licenses.
-            $message = _('My text and files are available under %s ' .
-                         'except this private data: password, ' .
-                         'email address, IM address, and phone number.');
+	  //            $message = _('My text and files are available under %s ' .
+	  //                         'except this private data: password, ' .
+	  //                         'email address, IM address, and phone number.');
+            $message = _('パスワード、メールアドレスなどの個人情報は %s の下でのみ利用する');
             $link = '<a href="' .
                     htmlspecialchars(common_config('license', 'url')) .
                     '">' .

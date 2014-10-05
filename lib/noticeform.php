@@ -238,6 +238,7 @@ class NoticeForm extends Form
             }
             $this->out->hidden('notice_in-reply-to', $this->inreplyto, 'inreplyto');
 
+	    /*
             $this->out->elementStart('div', 'to-selector');
             $toWidget = new ToSelector($this->out,
                                        $this->user,
@@ -245,6 +246,7 @@ class NoticeForm extends Form
 
             $toWidget->show();
             $this->out->elementEnd('div');
+	    */
 
             if ($this->user->shareLocation()) {
                 $this->out->hidden('notice_data-lat', empty($this->lat) ? (empty($this->profile->lat) ? null : $this->profile->lat) : $this->lat, 'lat');

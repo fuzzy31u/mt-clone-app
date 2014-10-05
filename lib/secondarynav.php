@@ -48,6 +48,7 @@ class SecondaryNav extends Menu
 {
     function show()
     {
+      /*
         $this->out->elementStart('ul', array('class' => 'nav',
                                              'id' => 'site_nav_global_secondary'));
         if (Event::handle('StartSecondaryNav', array($this->action))) {
@@ -82,5 +83,6 @@ class SecondaryNav extends Menu
             Event::handle('EndSecondaryNav', array($this->action));
         }
         $this->out->elementEnd('ul');
+      */
     }
 }

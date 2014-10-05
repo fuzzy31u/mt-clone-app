@@ -78,7 +78,7 @@ class SettingsNav extends Menu
 
             $this->action->menuItem(common_local_url('avatarsettings'),
                                     // TRANS: Menu item in settings navigation panel.
-                                    _m('MENU','Avatar'),
+                                    _m('MENU','画像'),
                                     // TRANS: Menu item title in settings navigation panel.
                                     _('Upload an avatar'),
                                     $actionName == 'avatarsettings');
@@ -97,13 +97,14 @@ class SettingsNav extends Menu
                                     _('Change email handling'),
                                     $actionName == 'emailsettings');
 
+	    /*
             $this->action->menuItem(common_local_url('urlsettings'),
                                     // TRANS: Menu item in settings navigation panel.
                                     _m('MENU','URL'),
                                     // TRANS: Menu item title in settings navigation panel.
                                     _('URL shorteners'),
                                     $actionName == 'urlsettings');
-
+	    */
             Event::handle('EndAccountSettingsNav', array(&$this->action));
 
             $haveImPlugin = false;
@@ -128,13 +129,14 @@ class SettingsNav extends Menu
                                         $actionName == 'smssettings');
             }
 
+	    /*
             $this->action->menuItem(common_local_url('oauthconnectionssettings'),
                                     // TRANS: Menu item in settings navigation panel.
                                     _m('MENU','Connections'),
                                     // TRANS: Menu item title in settings navigation panel.
                                     _('Authorized connected applications'),
                                     $actionName == 'oauthconnectionsettings');
-
+	    */
             if (common_config('oldschool', 'enabled')) {
                 $this->action->menuItem(common_local_url('oldschoolsettings'),
                                         // TRANS: Menu item in settings navigation panel.
