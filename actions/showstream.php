@@ -228,7 +228,8 @@ class ShowstreamAction extends ProfileAction
             $current_user = common_current_user();
             if ($this->user->id === $current_user->id) {
                 // TRANS: Second sentence of empty list message for a stream for the user themselves.
-                $message .= _('Seen anything interesting recently? You haven\'t posted any notices yet, now would be a good time to start :)');
+	      //                $message .= _('Seen anything interesting recently? You haven\'t posted any notices yet, now would be a good time to start :)');
+                $message .= _('何か投稿してみましょうヽ(´ー｀)ノ');
             } else {
                 // TRANS: Second sentence of empty  list message for a non-self timeline. %1$s is a user nickname, %2$s is a part of a URL.
                 // TRANS: This message contains a Markdown link. Keep "](" together.

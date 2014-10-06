@@ -630,6 +630,7 @@ class Action extends HTMLOutputter // lawsuit
         $this->elementStart('div', 'input_forms');
 
         if (Event::handle('StartShowEntryForms', array(&$tabs))) {
+	  /*
             $this->elementStart('ul', array('class' => 'nav',
                                             'id' => 'input_form_nav'));
 
@@ -652,6 +653,7 @@ class Action extends HTMLOutputter // lawsuit
             }
 
             $this->elementEnd('ul');
+	  */
 
             $attrs = array('class' => 'input_form current',
                            'id' => 'input_form_placeholder');

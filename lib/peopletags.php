@@ -67,10 +67,10 @@ class PeopletagsWidget extends Widget
     {
         if (Event::handle('StartShowPeopletags', array($this, $this->tagger, $this->tagged))) {
             if ($this->tag->N > 0) {
-                $this->showTags();
+	      //                $this->showTags();
             }
             else {
-                $this->showEmptyList();
+	      //                $this->showEmptyList();
             }
             Event::handle('EndShowPeopletags', array($this, $this->tagger, $this->tagged));
         }

@@ -93,7 +93,8 @@ class AllAction extends ProfileAction
         $user = common_current_user();
         if (!empty($user) && $user->id == $this->user->id) {
             // TRANS: Title of a user's own start page.
-            return _('Home timeline');
+	  //            return _('Home timeline');
+            return _('フォローしてる人のタイムライン');
         } else {
             $profile = $this->user->getProfile();
             // TRANS: Title of another user's start page.

@@ -439,7 +439,7 @@ class RegisterAction extends Action
             $this->input('nickname', _('Nickname'), $this->trimmed('nickname'),
                          // TRANS: Field title on account registration page.
 			 //                         _('1-64 lowercase letters or numbers, no punctuation or spaces.'));
-			 _('※例:yukmama. 1～64文字の小文字アルファベットまたは数字(スペースや句読点は除く).'));
+			 _('例: yuikmama'));
             $this->elementEnd('li');
             $this->elementStart('li');
             // TRANS: Field label on account registration page.
@@ -475,7 +475,7 @@ class RegisterAction extends Action
                          $this->trimmed('fullname'),
                      // TRANS: Field title on account registration page.
 			 //                     _('Longer name, preferably your "real" name.'));
-                     _('※例:ゆきママ'));
+                     _('例: ゆきママ'));
             $this->elementEnd('li');
             $this->elementStart('li');
             // TRANS: Field label on account registration page.
@@ -493,7 +493,7 @@ class RegisterAction extends Action
                 // TRANS: is decided by the number of characters available for the
                 // TRANS: biography (%d).
                 $bioInstr = sprintf(_m('Describe yourself and your interests in %d character.',
-                                       'Describe yourself and your interests in %d characters.',
+                                       ' ',
                                        $maxBio),
                                     $maxBio);
             } else {
@@ -521,8 +521,7 @@ class RegisterAction extends Action
             $this->checkbox('rememberme', _('Remember me'),
                             $this->boolean('rememberme'),
                             // TRANS: Checkbox title on account registration page.
-                            _('Automatically login in the future; '.
-                              'not for shared computers!'));
+                            _(' '));
             $this->elementEnd('li');
             $attrs = array('type' => 'checkbox',
                            'id' => 'license',
@@ -624,6 +623,7 @@ class RegisterAction extends Action
             // TRANS: %1$s is the registered nickname, %2$s is the profile URL.
             // TRANS: This message contains Markdown links in the form [link text](link)
             // TRANS: and variables in the form %%%%variable%%%%. Please mind the syntax.
+	    /*
             $instr = sprintf(_('Congratulations, %1$s! And welcome to %%%%site.name%%%%. '.
                                'From here, you may want to...'. "\n\n" .
                                '* Go to [your profile](%2$s) '.
@@ -642,6 +642,9 @@ class RegisterAction extends Action
                                ' for features you may have missed. ' . "\n\n" .
                                'Thanks for signing up and we hope '.
                                'you enjoy using this service.'),
+                             $nickname, $profileurl);
+	    */
+            $instr = sprintf(_('登録ありがとうございます！入力頂いたメールアドレスに確認用のメールを送りました。URLをクリックして登録を完了させてくだい。'),
                              $nickname, $profileurl);
 
             $this->raw(common_markup_to_html($instr));

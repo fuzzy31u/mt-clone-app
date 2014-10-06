@@ -146,7 +146,8 @@ class FavoritedAction extends Action
     function showEmptyList()
     {
         // TRANS: Text displayed instead of a list when a site does not yet have any favourited notices.
-        $message = _('Favorite notices appear on this page but no one has favorited one yet.') . ' ';
+            $message = _('Favorite notices appear on this page but no one has favorited one yet.') . ' ';
+
 
         if (common_logged_in()) {
             // TRANS: Additional text displayed instead of a list when a site does not yet have any favourited notices for logged in users.

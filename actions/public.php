@@ -139,10 +139,12 @@ class PublicAction extends Action
         if ($this->page > 1) {
             // TRANS: Title for all public timeline pages but the first.
             // TRANS: %d is the page number.
-            return sprintf(_('Public timeline, page %d'), $this->page);
+	  //            return sprintf(_('Public timeline, page %d'), $this->page);
+            return _('みんなのタイムライン');
         } else {
             // TRANS: Title for the first public timeline page.
-            return _('Public timeline');
+	  //            return _('Public timeline');
+            return _('みんなのタイムライン');
         }
     }
 

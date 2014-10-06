@@ -204,7 +204,8 @@ class RepliesAction extends Action
     {
         // TRANS: Empty list message for page with replies for a user.
         // TRANS: %1$s and %s$s are the user nickname.
-        $message = sprintf(_('This is the timeline showing replies to %1$s but %2$s hasn\'t received a notice to them yet.'),
+      //        $message = sprintf(_('This is the timeline showing replies to %1$s but %2$s hasn\'t received a notice to them yet.'),
+        $message = sprintf(_('返信はまだありません。'),
                            $this->user->nickname,
                            $this->user->nickname) . ' ';
 
@@ -213,7 +214,7 @@ class RepliesAction extends Action
             if ($this->user->id === $current_user->id) {
                 // TRANS: Empty list message for page with replies for a user for the logged in user.
                 // TRANS: This message contains a Markdown link in the form [link text](link).
-                $message .= _('You can engage other users in a conversation, subscribe to more people or [join groups](%%action.groups%%).');
+	      //                $message .= _('You can engage other users in a conversation, subscribe to more people or [join groups](%%action.groups%%).');
             } else {
                 // TRANS: Empty list message for page with replies for a user for all logged in users but the user themselves.
                 // TRANS: %1$s, %2$s and %3$s are a user nickname. This message contains a Markdown link in the form [link text](link).

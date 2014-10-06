@@ -238,8 +238,9 @@ class LoginAction extends Action
         // TRANS: Checkbox label label on login page.
         $this->checkbox('rememberme', _('Remember me'), false,
                         // TRANS: Checkbox title on login page.
-                        _('Automatically login in the future; ' .
-                          'not for shared computers!'));
+			//                        _('Automatically login in the future; ' .
+			//                          'not for shared computers!'));
+                        _(' '));
         $this->elementEnd('li');
         $this->elementEnd('ul');
         // TRANS: Button text for log in on login page.
@@ -273,13 +274,16 @@ class LoginAction extends Action
                      'before changing your settings.');
         } else {
             // TRANS: Form instructions on login page.
-            $prompt = _('Login with your username and password.');
+	  //            $prompt = _('Login with your username and password.');
+            $prompt = _(' ');
             if (!common_config('site', 'closed') && !common_config('site', 'inviteonly')) {
                 $prompt .= ' ';
                 // TRANS: Form instructions on login page. This message contains Markdown links in the form [Link text](Link).
                 // TRANS: %%action.register%% is a link to the registration page.
-                $prompt .= _('Don\'t have a username yet? ' .
-                             '[Register](%%action.register%%) a new account.');
+		//                $prompt .= _('Don\'t have a username yet? ' .
+		//                             '[Register](%%action.register%%) a new account.');
+                $prompt .= _('新しく登録する場合は' .
+                             '[こちら](%%action.register%%)から');
             }
             return $prompt;
         }

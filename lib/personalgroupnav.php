@@ -109,6 +109,7 @@ class PersonalGroupNav extends Menu
             if ($cur && $cur->id == $user->id &&
                 !common_config('singleuser', 'enabled')) {
 
+	      /*
                 $this->out->menuItem(common_local_url('inbox', array('nickname' =>
                                                                      $nickname)),
                                      // TRANS: Menu item in personal group navigation menu.
@@ -116,6 +117,7 @@ class PersonalGroupNav extends Menu
                                      // TRANS: Menu item title in personal group navigation menu.
                                      _('Your incoming messages'),
                                      $mine && $action =='inbox');
+	      */
             }
 
             Event::handle('EndPersonalGroupNav', array($this));

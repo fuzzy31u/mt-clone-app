@@ -104,7 +104,8 @@ class ProfilesettingsAction extends SettingsAction
             $this->input('nickname', _('Nickname'),
                          ($this->arg('nickname')) ? $this->arg('nickname') : $profile->nickname,
                          // TRANS: Tooltip for field label in form for profile settings.
-                         _('1-64 lowercase letters or numbers, no punctuation or spaces.'));
+			 //                         _('1-64 lowercase letters or numbers, no punctuation or spaces.'));
+                         _(' '));
             $this->elementEnd('li');
             $this->elementStart('li');
             // TRANS: Field label in form for profile settings.
@@ -116,7 +117,8 @@ class ProfilesettingsAction extends SettingsAction
             $this->input('homepage', _('Homepage'),
                          ($this->arg('homepage')) ? $this->arg('homepage') : $profile->homepage,
                          // TRANS: Tooltip for field label in form for profile settings.
-                         _('URL of your homepage, blog, or profile on another site.'));
+			 //                         _('URL of your homepage, blog, or profile on another site.'));
+                         _('ブログなどのURL'));
             $this->elementEnd('li');
             $this->elementStart('li');
             $maxBio = Profile::maxBio();
@@ -125,7 +127,8 @@ class ProfilesettingsAction extends SettingsAction
                 // TRANS: is decided by the number of characters available for the
                 // TRANS: biography (%d).
                 $bioInstr = sprintf(_m('Describe yourself and your interests in %d character.',
-                                       'Describe yourself and your interests in %d characters.',
+				       //                                       'Describe yourself and your interests in %d characters.',
+                                       ' ',
                                        $maxBio),
                                     $maxBio);
             } else {
@@ -143,17 +146,20 @@ class ProfilesettingsAction extends SettingsAction
             $this->input('location', _('Location'),
                          ($this->arg('location')) ? $this->arg('location') : $profile->location,
                          // TRANS: Tooltip for field label in form for profile settings.
-                         _('Where you are, like "City, State (or Region), Country".'));
+			 //                         _('Where you are, like "City, State (or Region), Country".'));
+                         _(' '));
             $this->elementEnd('li');
             if (common_config('location', 'share') == 'user') {
                 $this->elementStart('li');
                 // TRANS: Checkbox label in form for profile settings.
-                $this->checkbox('sharelocation', _('Share my current location when posting notices'),
+		//                $this->checkbox('sharelocation', _('Share my current location when posting notices'),
+                $this->checkbox('sharelocation', _('投稿する時に位置情報を共有する'),
                                 ($this->arg('sharelocation')) ?
                                 $this->arg('sharelocation') : $user->shareLocation());
                 $this->elementEnd('li');
             }
             Event::handle('EndProfileFormData', array($this));
+	    /*
             $this->elementStart('li');
             // TRANS: Field label in form for profile settings.
             $this->input('tags', _('Tags'),
@@ -161,12 +167,14 @@ class ProfilesettingsAction extends SettingsAction
                          // TRANS: Tooltip for field label in form for profile settings.
                          _('Tags for yourself (letters, numbers, -, ., and _), comma- or space- separated.'));
             $this->elementEnd('li');
+	    */
             $this->elementStart('li');
             $language = common_language();
             // TRANS: Dropdownlist label in form for profile settings.
             $this->dropdown('language', _('Language'),
                          // TRANS: Tooltip for dropdown list label in form for profile settings.
-                            get_nice_language_list(), _('Preferred language.'),
+			    //                            get_nice_language_list(), _('Preferred language.'),
+                            get_nice_language_list(), _(' '),
                             false, $language);
             $this->elementEnd('li');
             $timezone = common_timezone();
@@ -178,9 +186,11 @@ class ProfilesettingsAction extends SettingsAction
             // TRANS: Dropdownlist label in form for profile settings.
             $this->dropdown('timezone', _('Timezone'),
                          // TRANS: Tooltip for dropdown list label in form for profile settings.
-                            $timezones, _('What timezone are you normally in?'),
+			    //                            $timezones, _('What timezone are you normally in?'),
+                            $timezones, _(' '),
                             true, $timezone);
             $this->elementEnd('li');
+	    /*
             $this->elementStart('li');
             $this->checkbox('autosubscribe',
                             // TRANS: Checkbox label in form for profile settings.
@@ -202,7 +212,9 @@ class ProfilesettingsAction extends SettingsAction
                             false,
                             (empty($user->subscribe_policy)) ? User::SUBSCRIBE_POLICY_OPEN : $user->subscribe_policy);
             $this->elementEnd('li');
+	    */
         }
+	/*
         $this->elementStart('li');
         $this->checkbox('private_stream',
                         // TRANS: Checkbox label in profile settings.
@@ -210,6 +222,7 @@ class ProfilesettingsAction extends SettingsAction
                         ($this->arg('private_stream')) ?
                         $this->boolean('private_stream') : $user->private_stream);
         $this->elementEnd('li');
+	*/
         $this->elementEnd('ul');
         // TRANS: Button to save input in profile settings.
         $this->submit('save', _m('BUTTON','Save'));
