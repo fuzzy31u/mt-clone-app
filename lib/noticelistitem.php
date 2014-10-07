@@ -584,7 +584,8 @@ class NoticeListItem extends Widget
                     'href' => $convurl.'#notice-'.$this->notice->id,
                     'class' => 'response'),
                     // TRANS: Addition in notice list item if notice is part of a conversation.
-                    _('in context')
+		    //                    _('in context')
+                    _('会話を見る')
                 );
             } else {
                 $msg = sprintf(
