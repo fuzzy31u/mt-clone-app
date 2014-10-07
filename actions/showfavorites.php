@@ -203,11 +203,13 @@ class ShowfavoritesAction extends Action
             $current_user = common_current_user();
             if ($this->user->id === $current_user->id) {
                 // TRANS: Text displayed instead of favourite notices for the current logged in user that has no favourites.
-                $message = _('You haven\'t chosen any favorite notices yet. Click the fave button on notices you like to bookmark them for later or shed a spotlight on them.');
+	      //                $message = _('You haven\'t chosen any favorite notices yet. Click the fave button on notices you like to bookmark them for later or shed a spotlight on them.');
+                $message = _(' ');
             } else {
                 // TRANS: Text displayed instead of favourite notices for a user that has no favourites while logged in.
                 // TRANS: %s is a username.
-                $message = sprintf(_('%s hasn\'t added any favorite notices yet. Post something interesting they would add to their favorites :)'), $this->user->nickname);
+	      //                $message = sprintf(_('%s hasn\'t added any favorite notices yet. Post something interesting they would add to their favorites :)'), $this->user->nickname);
+                $message = sprintf(_(' '), $this->user->nickname);
             }
         }
         else {
@@ -245,7 +247,8 @@ class ShowfavoritesAction extends Action
 
     function showPageNotice() {
         // TRANS: Page notice for show favourites page.
-        $this->element('p', 'instructions', _('This is a way to share what you like.'));
+      //        $this->element('p', 'instructions', _('This is a way to share what you like.'));
+        $this->element('p', 'instructions', _('いいね！した投稿'));
     }
 }
 

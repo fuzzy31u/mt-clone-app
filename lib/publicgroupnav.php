@@ -64,7 +64,8 @@ class PublicGroupNav extends Menu
         if (Event::handle('StartPublicGroupNav', array($this))) {
             if (!common_config('singleuser', 'enabled')) {
                 // TRANS: Menu item in search group navigation panel.
-                $this->out->menuItem(common_local_url('public'), _m('MENU','Public'),
+	      //                $this->out->menuItem(common_local_url('public'), _m('MENU','Public'),
+                $this->out->menuItem(common_local_url('public'), _m('MENU','みんな'),
                                      // TRANS: Menu item title in search group navigation panel.
                                      _('Public timeline'), $this->actionName == 'public', 'nav_timeline_public');
             }
@@ -76,7 +77,8 @@ class PublicGroupNav extends Menu
 
             if (!common_config('performance', 'high')) {
                 // TRANS: Menu item in search group navigation panel.
-                $this->out->menuItem(common_local_url('publictagcloud'), _m('MENU','Recent tags'),
+	      //                $this->out->menuItem(common_local_url('publictagcloud'), _m('MENU','Recent tags'),
+                $this->out->menuItem(common_local_url('publictagcloud'), _m('MENU','人気のタグ'),
                                      // TRANS: Menu item title in search group navigation panel.
                                      _('Recent tags'), $this->actionName == 'publictagcloud', 'nav_recent-tags');
             }
@@ -90,7 +92,8 @@ class PublicGroupNav extends Menu
 
             if (!common_config('singleuser', 'enabled')) {
                 // TRANS: Menu item in search group navigation panel.
-                $this->out->menuItem(common_local_url('favorited'), _m('MENU','Popular'),
+	      //                $this->out->menuItem(common_local_url('favorited'), _m('MENU','Popular'),
+                $this->out->menuItem(common_local_url('favorited'), _m('MENU','人気の投稿'),
                                      // TRANS: Menu item title in search group navigation panel.
                                      _('Popular notices'), $this->actionName == 'favorited', 'nav_timeline_favorited');
             }

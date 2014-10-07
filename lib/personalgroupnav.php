@@ -71,7 +71,8 @@ class PersonalGroupNav extends Menu
             $this->out->menuItem(common_local_url('all', array('nickname' =>
                                                                $nickname)),
                                  // TRANS: Menu item in personal group navigation menu.
-                                 _m('MENU','Home'),
+				 //                                 _m('MENU','Home'),
+                                 _m('MENU','フォロー'),
                                  // TRANS: Menu item title in personal group navigation menu.
                                  // TRANS: %s is a username.
                                  sprintf(_('%s and friends'), $name),
@@ -79,9 +80,11 @@ class PersonalGroupNav extends Menu
             $this->out->menuItem(common_local_url('showstream', array('nickname' =>
                                                                       $nickname)),
                                  // TRANS: Menu item in personal group navigation menu.
-                                 _m('MENU','Profile'),
+				 //                                 _m('MENU','Profile'),
+                                 _m('MENU','自分'),
                                  // TRANS: Menu item title in personal group navigation menu.
-                                 _('Your profile'),
+				 //                                 _('Your profile'),
+                                 _('自分のタイムライン'),
                                  $mine && $action =='showstream',
                                  'nav_profile');
             $this->out->menuItem(common_local_url('replies', array('nickname' =>

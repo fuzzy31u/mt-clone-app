@@ -588,10 +588,12 @@ class Action extends HTMLOutputter // lawsuit
 
         $user = common_current_user();
 
+	/*
         if (!empty($user) || !common_config('site', 'private')) {
             $form = new SearchForm($this);
             $form->show();
         }
+	*/
 
         $pn = new PrimaryNav($this);
         $pn->show();

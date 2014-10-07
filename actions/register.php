@@ -652,10 +652,13 @@ class RegisterAction extends Action
             $have_email = $this->trimmed('email');
             if ($have_email) {
                 // TRANS: Instruction text on how to deal with the e-mail address confirmation e-mail.
+	      /*
                 $emailinstr = _('(You should receive a message by email '.
                                 'momentarily, with ' .
                                 'instructions on how to confirm '.
                                 'your email address.)');
+	      */
+                $emailinstr = _(' ');
                 $this->raw(common_markup_to_html($emailinstr));
             }
             $this->elementEnd('div');

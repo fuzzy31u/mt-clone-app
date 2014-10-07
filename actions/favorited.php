@@ -62,7 +62,8 @@ class FavoritedAction extends Action
     {
         if ($this->page == 1) {
             // TRANS: Page title for first page of favorited notices.
-            return _('Popular notices');
+	  //            return _('Popular notices');
+            return _('人気の投稿');
         } else {
             // TRANS: Page title for all but first page of favorited notices.
             // TRANS: %d is the page number being displayed.
@@ -78,7 +79,8 @@ class FavoritedAction extends Action
     function getInstructions()
     {
         // TRANS: Description on page displaying favorited notices.
-        return _('The most popular notices on the site right now.');
+      //        return _('The most popular notices on the site right now.');
+        return _(' ');
     }
 
     /**

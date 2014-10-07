@@ -54,7 +54,8 @@ class ProfilesettingsAction extends SettingsAction
     function title()
     {
         // TRANS: Page title for profile settings.
-        return _('Profile settings');
+      //        return _('Profile settings');
+        return _('プロフィール設定');
     }
 
     /**
@@ -65,8 +66,9 @@ class ProfilesettingsAction extends SettingsAction
     function getInstructions()
     {
         // TRANS: Usage instructions for profile settings.
-        return _('You can update your personal profile info here '.
-                 'so people know more about you.');
+      //        return _('You can update your personal profile info here '.
+      //                 'so people know more about you.');
+        return _(' ');
     }
 
     function showScripts()
@@ -168,6 +170,7 @@ class ProfilesettingsAction extends SettingsAction
                          _('Tags for yourself (letters, numbers, -, ., and _), comma- or space- separated.'));
             $this->elementEnd('li');
 	    */
+	    /*
             $this->elementStart('li');
             $language = common_language();
             // TRANS: Dropdownlist label in form for profile settings.
@@ -177,6 +180,7 @@ class ProfilesettingsAction extends SettingsAction
                             get_nice_language_list(), _(' '),
                             false, $language);
             $this->elementEnd('li');
+	    */
             $timezone = common_timezone();
             $timezones = array();
             foreach(DateTimeZone::listIdentifiers() as $k => $v) {

@@ -63,7 +63,8 @@ class AvatarsettingsAction extends SettingsAction
     function title()
     {
         // TRANS: Title for avatar upload page.
-        return _('Avatar');
+      //        return _('Avatar');
+        return _('画像の変更');
     }
 
     /**
@@ -75,7 +76,9 @@ class AvatarsettingsAction extends SettingsAction
     {
         // TRANS: Instruction for avatar upload page.
         // TRANS: %s is the maximum file size, for example "500b", "10kB" or "2MB".
-        return sprintf(_('You can upload your personal avatar. The maximum file size is %s.'),
+      //        return sprintf(_('You can upload your personal avatar. The maximum file size is %s.'),
+      //                       ImageFile::maxFileSize());
+      return sprintf(_('画像を変更します。最大サイズは%sです。'),
                        ImageFile::maxFileSize());
     }
 

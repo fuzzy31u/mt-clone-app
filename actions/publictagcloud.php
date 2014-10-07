@@ -54,7 +54,8 @@ class PublictagcloudAction extends Action
     function title()
     {
         // TRANS: Title for public tag cloud.
-        return _('Public tag cloud');
+      //        return _('Public tag cloud');
+        return _('人気のタグ');
     }
 
     function showPageNotice()
@@ -62,7 +63,8 @@ class PublictagcloudAction extends Action
         $this->element('p', 'instructions',
                        // TRANS: Instructions (more used like an explanation/header).
                        // TRANS: %s is the StatusNet sitename.
-                       sprintf(_('These are most popular recent tags on %s'),
+		       //                       sprintf(_('These are most popular recent tags on %s'),
+                       sprintf(_(' '),
                                common_config('site', 'name')));
     }
 

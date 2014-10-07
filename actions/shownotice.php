@@ -193,7 +193,8 @@ class ShownoticeAction extends Action
 
         // TRANS: Title of the page that shows a notice.
         // TRANS: %1$s is a user name, %2$s is the notice creation date/time.
-        return sprintf(_('%1$s\'s status on %2$s'),
+	//	        return sprintf(_('%1$s\'s status on %2$s'),
+	        return sprintf(_('%1$sの投稿'),
                        $base,
                        common_exact_date($this->notice->created));
     }
