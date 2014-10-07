@@ -181,12 +181,20 @@ function mail_confirm_address($user, $code, $nickname, $address, $url=null)
     // TRANS: Body for address confirmation email.
     // TRANS: %1$s is the addressed user's nickname, %2$s is the StatusNet sitename,
     // TRANS: %3$s is the URL to confirm at.
+    /*
     $body = sprintf(_("Hey, %1\$s.\n\n".
                       "Someone just entered this email address on %2\$s.\n\n" .
                       "If it was you, and you want to confirm your entry, ".
                       "use the URL below:\n\n\t%3\$s\n\n" .
                       "If not, just ignore this message.\n\n".
                       "Thanks for your time, \n%2\$s\n"),
+                    $nickname,
+                    common_config('site', 'name'),
+                    $url);
+    */
+    $body = sprintf(_("%2\$sへの登録、ありがとうございます！\n\n" .
+		      "メールアドレス確認のため、下記のURLにアクセスして登録を完了してください。\n" .
+		      "%3\$s"),
                     $nickname,
                     common_config('site', 'name'),
                     $url);
@@ -247,13 +255,15 @@ function mail_subscribe_notify_profile($listenee, $other)
         $headers['To']      = $name . ' <' . $listenee->email . '>';
         // TRANS: Subject of new-subscriber notification e-mail.
         // TRANS: %1$s is the subscribing user's nickname, %2$s is the StatusNet sitename.
-        $headers['Subject'] = sprintf(_('%1$s is now following you on %2$s.'),
+	//        $headers['Subject'] = sprintf(_('%1$s is now following you on %2$s.'),
+        $headers['Subject'] = sprintf(_('%1$sにフォローされました'),
                                       $other->getBestName(),
                                       common_config('site', 'name'));
 
         // TRANS: Main body of new-subscriber notification e-mail.
         // TRANS: %1$s is the subscriber's long name, %2$s is the StatusNet sitename.
-        $body = sprintf(_('%1$s is now following you on %2$s.'),
+	//        $body = sprintf(_('%1$s is now following you on %2$s.'),
+        $body = sprintf(_('%1$sにフォローされました'),
                         $long_name,
                         common_config('site', 'name')) .
                 mail_profile_block($other) .
@@ -313,11 +323,16 @@ function mail_footer_block()
     // TRANS: Common footer block for StatusNet notification emails.
     // TRANS: %1$s is the StatusNet sitename,
     // TRANS: %2$s is a link to the addressed user's e-mail settings.
+  /*
     return "\n\n" . sprintf(_('Faithfully yours,'.
                               "\n".'%1$s.'."\n\n".
                               "----\n".
                               "Change your email address or ".
                               "notification options at ".'%2$s'),
+  */
+    return "\n\n" . sprintf(_("\n".'%1$s.'."\n\n".
+                              "----\n".
+                              '%2$s' . "で通知設定を変更できます。"),
                             common_config('site', 'name'),
                             common_local_url('emailsettings')) . "\n";
 }
@@ -338,11 +353,11 @@ function mail_profile_block($profile)
     $out[] = "";
     // TRANS: Profile info line in notification e-mail.
     // TRANS: %s is a URL.
-    $out[] = sprintf(_("Profile: %s"), $profile->profileurl);
+    $out[] = sprintf(_("プロフィール: %s"), $profile->profileurl);
     if ($profile->location) {
         // TRANS: Profile info line in notification e-mail.
         // TRANS: %s is a location.
-        $out[] = sprintf(_("Location: %s"), $profile->location);
+      //        $out[] = sprintf(_("Location: %s"), $profile->location);
     }
     if ($profile->homepage) {
         // TRANS: Profile info line in notification e-mail.
@@ -362,9 +377,13 @@ function mail_profile_block($profile)
 
     // TRANS: This is a paragraph in a new-subscriber e-mail.
     // TRANS: %s is a URL where the subscriber can be reported as abusive.
+    /*
     $out[] = sprintf(_('If you believe this account is being used abusively, ' .
                        'you can block them from your subscribers list and ' .
                        'report as spam to site administrators at %s.'),
+                     $blocklink);
+    */
+    $out[] = sprintf(_('このユーザーをブロックしたい場合はこちら: %s.'),
                      $blocklink);
     $out[] = "";
 
@@ -680,13 +699,15 @@ function mail_notify_fave($other, $user, $notice)
 
     // TRANS: Subject for favorite notification e-mail.
     // TRANS: %1$s is the adding user's long name, %2$s is the adding user's nickname.
-    $subject = sprintf(_('%1$s (@%2$s) added your notice as a favorite'), $bestname, $user->nickname);
+    //    $subject = sprintf(_('%1$s (@%2$s) added your notice as a favorite'), $bestname, $user->nickname);
+    $subject = sprintf(_('%1$s (@%2$s) さんがいいね！と言っています'), $bestname, $user->nickname);
 
     // TRANS: Body for favorite notification e-mail.
     // TRANS: %1$s is the adding user's long name, $2$s is the date the notice was created,
     // TRANS: %3$s is a URL to the faved notice, %4$s is the faved notice text,
     // TRANS: %5$s is a URL to all faves of the adding user, %6$s is the StatusNet sitename,
     // TRANS: %7$s is the adding user's nickname.
+    /*
     $body = sprintf(_("%1\$s (@%7\$s) just added your notice from %2\$s".
                       " as one of their favorites.\n\n" .
                       "The URL of your notice is:\n\n" .
@@ -694,6 +715,14 @@ function mail_notify_fave($other, $user, $notice)
                       "The text of your notice is:\n\n" .
                       "%4\$s\n\n" .
                       "You can see the list of %1\$s's favorites here:\n\n" .
+                      "%5\$s"),
+    */
+    $body = sprintf(_("%1\$s (@%7\$s) さんがあなたの投稿にいいね！と言っています。".
+                      "投稿はこちら :\n\n" .
+                      "%3\$s\n\n" .
+                      "内容はこちら :\n\n" .
+                      "%4\$s\n\n" .
+                      "%1\$s さんのお気に入り一覧 :\n\n" .
                       "%5\$s"),
                     $bestname,
                     common_exact_date($notice->created),
@@ -757,13 +786,15 @@ function mail_notify_attn($user, $notice)
 
     // TRANS: E-mail subject for notice notification.
     // TRANS: %1$s is the sending user's long name, %2$s is the adding user's nickname.
-    $subject = sprintf(_('%1$s (@%2$s) sent a notice to your attention'), $bestname, $sender->nickname);
+    //    $subject = sprintf(_('%1$s (@%2$s) sent a notice to your attention'), $bestname, $sender->nickname);
+    $subject = sprintf(_('%1$s (@%2$s) さんから返信がありました'), $bestname, $sender->nickname);
 
         // TRANS: Body of @-reply notification e-mail.
         // TRANS: %1$s is the sending user's name, $2$s is the StatusNet sitename,
         // TRANS: %3$s is a URL to the notice, %4$s is the notice text,
         // TRANS: %5$s is the text "The full conversation can be read here:" and a URL to the full conversion if it exists (otherwise empty),
         // TRANS: %6$s is a URL to reply to the notice, %7$s is a URL to all @-replies for the addressed user,
+    /*
         $body = sprintf(_("%1\$s just sent a notice to your attention (an '@-reply') on %2\$s.\n\n".
                       "The notice is here:\n\n".
                       "\t%3\$s\n\n" .
@@ -773,6 +804,12 @@ function mail_notify_attn($user, $notice)
                       "You can reply back here:\n\n".
                       "\t%6\$s\n\n" .
                       "The list of all @-replies for you here:\n\n" .
+                      "%7\$s"),
+    */
+        $body = sprintf(_("%1\$s さんから返信がありました。\n\n".
+                      "\t%3\$s\n\n" .
+                      "\t%4\$s\n\n" .
+                      "返信をすべて見るにはこちら:\n\n" .
                       "%7\$s"),
                     $sender->getFancyName(),//%1
                     common_config('site', 'name'),//%2
