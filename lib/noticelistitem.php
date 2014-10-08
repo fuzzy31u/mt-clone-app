@@ -131,7 +131,7 @@ class NoticeListItem extends Widget
 	    //            $this->showNoticeSource();
             $this->showNoticeLocation();
             $this->showContext();
-            $this->showRepeat();
+	    //            $this->showRepeat();
             Event::handle('EndShowNoticeInfo', array($this));
         }
 
@@ -147,7 +147,7 @@ class NoticeListItem extends Widget
                 if (Event::handle('StartShowNoticeOptionItems', array($this))) {
                     $this->showFaveForm();
                     $this->showReplyLink();
-                    $this->showRepeatForm();
+		    //                    $this->showRepeatForm();
                     $this->showDeleteLink();
                     Event::handle('EndShowNoticeOptionItems', array($this));
                 }
