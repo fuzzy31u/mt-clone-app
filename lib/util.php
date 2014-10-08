@@ -1352,21 +1352,24 @@ function common_date_string($dt)
     } else if ($diff < 3300) {
         $minutes = round($diff/60);
         // TRANS: Used in notices to indicate when the notice was made compared to now.
-        return sprintf( _m('about one minute ago', 'about %d minutes ago', $minutes), $minutes);
+	//        return sprintf( _m('about one minute ago', 'about %d minutes ago', $minutes), $minutes);
+        return sprintf( _m('about one minute ago', '%d分前', $minutes), $minutes);
     } else if ($diff < 5400) {
         // TRANS: Used in notices to indicate when the notice was made compared to now.
         return _('about an hour ago');
     } else if ($diff < 22 * 3600) {
         $hours = round($diff/3600);
         // TRANS: Used in notices to indicate when the notice was made compared to now.
-        return sprintf( _m('about one hour ago', 'about %d hours ago', $hours), $hours);
+	//        return sprintf( _m('about one hour ago', 'about %d hours ago', $hours), $hours);
+        return sprintf( _m('about one hour ago', '%d時間前', $hours), $hours);
     } else if ($diff < 37 * 3600) {
         // TRANS: Used in notices to indicate when the notice was made compared to now.
         return _('about a day ago');
     } else if ($diff < 24 * 24 * 3600) {
         $days = round($diff/(24*3600));
         // TRANS: Used in notices to indicate when the notice was made compared to now.
-        return sprintf( _m('about one day ago', 'about %d days ago', $days), $days);
+	//        return sprintf( _m('about one day ago', 'about %d days ago', $days), $days);
+        return sprintf( _m('about one day ago', '%d日前', $days), $days);
     } else if ($diff < 46 * 24 * 3600) {
         // TRANS: Used in notices to indicate when the notice was made compared to now.
         return _('about a month ago');
