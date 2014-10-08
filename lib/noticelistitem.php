@@ -467,6 +467,7 @@ class NoticeListItem extends Widget
         $url  = $location->getUrl();
 
         $this->out->text(' ');
+	/*
         $this->out->elementStart('span', array('class' => 'location'));
         // TRANS: Followed by geo location.
         $this->out->text(_('at'));
@@ -486,6 +487,7 @@ class NoticeListItem extends Widget
             $this->out->raw($xstr->getString());
         }
         $this->out->elementEnd('span');
+	*/
     }
 
     /**
