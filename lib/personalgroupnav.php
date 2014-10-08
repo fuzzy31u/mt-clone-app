@@ -95,6 +95,7 @@ class PersonalGroupNav extends Menu
                                  // TRANS: %s is a username.
                                  sprintf(_('Replies to %s'), $name),
                                  $mine && $action =='replies', 'nav_timeline_replies');
+	    /*
             $this->out->menuItem(common_local_url('showfavorites', array('nickname' =>
                                                                          $nickname)),
                                  // TRANS: Menu item in personal group navigation menu.
@@ -106,7 +107,7 @@ class PersonalGroupNav extends Menu
                                          // TRANS: Replaces %s in '%s\'s favorite notices'. (Yes, we know we need to fix this.)
                                          ($user_profile) ? $name : _m('FIXME','User')),
                                  $mine && $action =='showfavorites', 'nav_timeline_favorites');
-
+	    */
             $cur = common_current_user();
 
             if ($cur && $cur->id == $user->id &&
