@@ -77,6 +77,7 @@ class NoticeForm extends Form
     var $lat;
     var $lon;
     var $location_id;
+
     var $location_ns;
 
     /** select this group from the drop-down by default. */
@@ -221,6 +222,7 @@ class NoticeForm extends Form
                                     $contentLimit);
             }
 
+	    /*
             if (common_config('attachments', 'uploads')) {
                 $this->out->hidden('MAX_FILE_SIZE', common_config('attachments', 'file_quota'));
                 $this->out->elementStart('label', array('class' => 'notice_data-attach'));
@@ -233,6 +235,7 @@ class NoticeForm extends Form
                                                    'title' => _('Attach a file.')));
                 $this->out->elementEnd('label');
             }
+	    */
             if (!empty($this->actionName)) {
                 $this->out->hidden('notice_return-to', $this->actionName, 'returnto');
             }
@@ -254,6 +257,7 @@ class NoticeForm extends Form
                 $this->out->hidden('notice_data-location_id', empty($this->location_id) ? (empty($this->profile->location_id) ? null : $this->profile->location_id) : $this->location_id, 'location_id');
                 $this->out->hidden('notice_data-location_ns', empty($this->location_ns) ? (empty($this->profile->location_ns) ? null : $this->profile->location_ns) : $this->location_ns, 'location_ns');
 
+		/*
                 $this->out->elementStart('div', array('class' => 'notice_data-geo_wrap',
                                                       'data-api' => common_local_url('geocode')));
 
@@ -282,6 +286,7 @@ class NoticeForm extends Form
                     'ShareDisable: ' .json_encode($share_disable_text).','.
                     'ErrorTimeout: ' .json_encode($error_timeout_text).
                     '}');
+		*/
             }
 
             Event::handle('EndShowNoticeFormData', array($this));
