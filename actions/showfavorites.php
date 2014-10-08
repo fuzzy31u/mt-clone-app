@@ -73,7 +73,7 @@ class ShowfavoritesAction extends Action
         if ($this->page == 1) {
             // TRANS: Title for first page of favourite notices of a user.
             // TRANS: %s is the user for whom the favourite notices are displayed.
-            return sprintf(_('%s\'s favorite notices'), $this->user->nickname);
+	    return sprintf(_('%s\'s favorite notices'), $this->user->nickname);
         } else {
             // TRANS: Title for all but the first page of favourite notices of a user.
             // TRANS: %1$s is the user for whom the favourite notices are displayed, %2$d is the page number.
@@ -248,7 +248,7 @@ class ShowfavoritesAction extends Action
     function showPageNotice() {
         // TRANS: Page notice for show favourites page.
       //        $this->element('p', 'instructions', _('This is a way to share what you like.'));
-        $this->element('p', 'instructions', _('いいね！した投稿'));
+        $this->element('p', 'instructions', _(' '));
     }
 }
 

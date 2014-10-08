@@ -219,7 +219,7 @@ class EmailsettingsAction extends SettingsAction
                             // TRANS: Checkbox label in e-mail preferences form.
 			    //                            _('Send me email when someone '.
 			    //                              'adds my notice as a favorite.'),
-                            _('いいね！された時に通知する'),
+                            _('応援された時に通知する'),
                             $user->emailnotifyfav);
             $this->elementEnd('li');
 	    /*

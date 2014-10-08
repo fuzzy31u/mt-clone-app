@@ -700,7 +700,7 @@ function mail_notify_fave($other, $user, $notice)
     // TRANS: Subject for favorite notification e-mail.
     // TRANS: %1$s is the adding user's long name, %2$s is the adding user's nickname.
     //    $subject = sprintf(_('%1$s (@%2$s) added your notice as a favorite'), $bestname, $user->nickname);
-    $subject = sprintf(_('%1$s (@%2$s) さんがいいね！と言っています'), $bestname, $user->nickname);
+    $subject = sprintf(_('%1$s (@%2$s)さんが応援してくれました'), $bestname, $user->nickname);
 
     // TRANS: Body for favorite notification e-mail.
     // TRANS: %1$s is the adding user's long name, $2$s is the date the notice was created,
@@ -717,20 +717,21 @@ function mail_notify_fave($other, $user, $notice)
                       "You can see the list of %1\$s's favorites here:\n\n" .
                       "%5\$s"),
     */
-    $body = sprintf(_("%1\$s (@%7\$s) さんがあなたの投稿にいいね！と言っています。".
+    $body = sprintf(_("%1\$s (@%7\$s) さんが応援してくれました。\n\n".
                       "投稿はこちら :\n\n" .
                       "%3\$s\n\n" .
                       "内容はこちら :\n\n" .
                       "%4\$s\n\n" .
-                      "%1\$s さんのお気に入り一覧 :\n\n" .
+                      "%1\$sさんの投稿一覧 :\n\n" .
                       "%5\$s"),
                     $bestname,
                     common_exact_date($notice->created),
                     common_local_url('shownotice',
                                      array('notice' => $notice->id)),
                     $notice->content,
-                    common_local_url('showfavorites',
-                                     array('nickname' => $user->nickname)),
+		    //                    common_local_url('showfavorites',
+		    //                                     array('nickname' => $user->nickname)),
+		    $profile->profileurl,
                     common_config('site', 'name'),
                     $user->nickname) .
             mail_footer_block();
