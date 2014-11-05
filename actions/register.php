@@ -439,7 +439,7 @@ class RegisterAction extends Action
             $this->input('nickname', _('Nickname'), $this->trimmed('nickname'),
                          // TRANS: Field title on account registration page.
 			 //                         _('1-64 lowercase letters or numbers, no punctuation or spaces.'));
-			 _('例: yuikmama'));
+			 _('小文字アルファベット、数字のみ 例: yukimama'));k
             $this->elementEnd('li');
             $this->elementStart('li');
             // TRANS: Field label on account registration page.
@@ -477,6 +477,7 @@ class RegisterAction extends Action
 			 //                     _('Longer name, preferably your "real" name.'));
                      _('例: ゆきママ'));
             $this->elementEnd('li');
+	    /*
             $this->elementStart('li');
             // TRANS: Field label on account registration page.
             $this->input('homepage', _('ブログURLなど'),
@@ -486,6 +487,7 @@ class RegisterAction extends Action
 			 //                           'or profile on another site.'));
 			 _(' '));
             $this->elementEnd('li');
+	    */
             $this->elementStart('li');
             $maxBio = Profile::maxBio();
             if ($maxBio > 0) {
@@ -506,6 +508,7 @@ class RegisterAction extends Action
                             $this->trimmed('bio'),
                             $bioInstr);
             $this->elementEnd('li');
+	    /*
             $this->elementStart('li');
             // TRANS: Field label on account registration page.
             $this->input('location', _('都道府県'),
@@ -515,6 +518,7 @@ class RegisterAction extends Action
 			 //                           'State (or Region), Country".'));
                          _(' '));
             $this->elementEnd('li');
+	    */
             Event::handle('EndRegistrationFormData', array($this));
             $this->elementStart('li', array('id' => 'settings_rememberme'));
             // TRANS: Checkbox label on account registration page.

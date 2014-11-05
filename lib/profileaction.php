@@ -103,9 +103,9 @@ class ProfileAction extends Action
     {
         $this->showSubscriptions();
         $this->showSubscribers();
-        $this->showGroups();
-        $this->showLists();
-        $this->showStatistics();
+	//        $this->showGroups();
+	//        $this->showLists();
+	//        $this->showStatistics();
     }
 
     /**

@@ -570,7 +570,8 @@ class Action extends HTMLOutputter // lawsuit
 
             $this->text(' ');
 	    //            $this->element('span', array('class' => 'fn org'), common_config('site', 'name'));
-            $this->element('h1', array('class' => 'fn org'), common_config('site', 'name'));
+            $this->element('h1', array('class' => 'fn org my-h1'), common_config('site', 'name'));
+            $this->element('span', array('class' => 'my-span'), "ママのひとこと投稿♥");
             $this->elementEnd('a');
 
             Event::handle('EndAddressData', array($this));
